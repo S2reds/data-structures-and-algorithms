@@ -1,20 +1,16 @@
-import * as readline from 'readline';
+let x = 121
 
-let rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+function isPalindrome(x: number): boolean {
+    for (let i = 0; i < x.toString().length/2; i++) {
+        var j = x.toString();
+        if (j.substr(i) !== j.substr(-1-i)) {
+            return false;
+        }
+        else {
+            continue;
+        }
+    }
+    return true;
+}
 
-rl.question('Is this example useful? [y/n] ', (answer) => {
-  switch(answer.toLowerCase()) {
-    case 'y':
-      console.log('Super!');
-      break;
-    case 'n':
-      console.log('Sorry! :(');
-      break;
-    default:
-      console.log('Invalid answer!');
-  }
-  rl.close();
-});
+isPalindrome(x);
